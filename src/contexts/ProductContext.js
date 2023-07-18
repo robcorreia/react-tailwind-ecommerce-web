@@ -7,7 +7,6 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([])
 
   //fecth products
-
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch('https://fakestoreapi.com/products')
@@ -18,9 +17,11 @@ export const ProductProvider = ({ children }) => {
     fetchProducts()
   }, [])
 
-  return <ProductContext.Provider value={{ products }}>
-    {children}
-  </ProductContext.Provider>
+  return (
+    <ProductContext.Provider value={{ products }}>
+      {children}
+    </ProductContext.Provider>
+  )
 };
 
 export default ProductContext;
