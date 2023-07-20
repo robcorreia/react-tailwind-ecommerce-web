@@ -17,7 +17,7 @@ const CartProvider = ({ children }) => {
     }, 0);
 
     setTotal(total)
-  })
+  }, [cart])
 
   // update itemAmoumnt
   useEffect(() => {
